@@ -16,6 +16,11 @@ app.use(express.json());
 
 app.listen(port, console.log(`express app running on port:${port}`));
 
+// express routes
+const authRoute = require("./routes/auth");
+
+app.use("/auth", authRoute);
+
 // connect to mongodb
 const mongoose = require("mongoose");
 
