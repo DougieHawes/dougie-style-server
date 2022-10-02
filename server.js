@@ -13,6 +13,8 @@ const app = express();
 const mongoUri = process.env.MONGODB_URI;
 const port = process.env.PORT;
 
+app.use(express.json());
+
 mongoose
   .connect(mongoUri)
   .then(() =>
@@ -25,8 +27,6 @@ mongoose
     })
   )
   .catch((error) => console.log(error.message));
-
-app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/product", productRoutes);

@@ -1,3 +1,9 @@
+export const createUser = (req, res) => {
+  res.json({ msg: "create user" });
+};
+export const loginUser = (req, res) => {
+  res.json({ msg: "login user" });
+};
 export const readUsers = (req, res) => {
   res.json({ msg: "read users" });
 };
